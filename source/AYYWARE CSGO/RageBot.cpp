@@ -964,6 +964,25 @@ namespace AntiAims
 		}
 	}
 
+	void Testing(CUserCmd *pCmd, bool &bSendPacket)
+	{
+
+		int random = rand() % 100;
+		int maxJitter = rand() % (85 - 70 + 1) + 70;
+		hackManager.pLocal()->GetLowerBodyYaw() - (rand() % maxJitter);
+		if (random < 35 + (rand() % 15))
+		{
+			bSendPacket = false;
+			pCmd->viewangles.y -= hackManager.pLocal()->GetLowerBodyYaw() - (rand() % maxJitter);;
+		}
+
+		else if (random < 85 + (rand() % 15))
+		{
+			bSendPacket = true;
+			pCmd->viewangles.y += hackManager.pLocal()->GetLowerBodyYaw() - (rand() % maxJitter);;
+		}
+	}
+
 }
 
 void CorrectMovement(Vector old_angles, CUserCmd* cmd, float old_forwardmove, float old_sidemove)
@@ -1154,6 +1173,10 @@ void CRageBot::DoAntiAim(CUserCmd *pCmd, bool &bSendPacket)
 		// 180 JITTER LMAO
 		AntiAims::BackJitter(pCmd);
 		break;
+	case 5:
+		// Testing
+		AntiAims::Testing(pCmd,bSendPacket);
+		break;
 	}
 	switch (Menu::Window.RageBotTab.AntiAimYaw.GetIndex())
 	{
@@ -1175,6 +1198,10 @@ void CRageBot::DoAntiAim(CUserCmd *pCmd, bool &bSendPacket)
 	case 4:
 		// 180 JITTER LMAO
 		AntiAims::BackJitter(pCmd);
+		break;
+	case 5:
+		// Testing
+		AntiAims::Testing(pCmd, bSendPacket);
 		break;
 	}
 

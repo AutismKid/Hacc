@@ -285,6 +285,7 @@ void CRageBotTab::Setup()
 	AntiAimYaw.AddItem("Break LBY");
 	AntiAimYaw.AddItem("New LBY");
 	AntiAimYaw.AddItem("Jitter 180");
+	AntiAimYaw.AddItem("Testing");
 	AntiAimGroup.PlaceLabledControl("Real Yaw", this, &AntiAimYaw);
 
 	FakeYaw.SetFileId("fakeaa");
@@ -293,6 +294,7 @@ void CRageBotTab::Setup()
 	FakeYaw.AddItem("Break LBY");
 	FakeYaw.AddItem("New LBY");
 	FakeYaw.AddItem("Jitter 180");
+	FakeYaw.AddItem("Testing");
 	AntiAimGroup.PlaceLabledControl("Fake Yaw", this, &FakeYaw);
 
 
