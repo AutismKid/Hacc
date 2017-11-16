@@ -979,5 +979,28 @@ void __fastcall Hooked_RenderView(void* ecx, void* edx, CViewSetup &setup, CView
 	}
 } //hooked for no reason yay
 
+class player_hurt_listener
+	: public IGameEventListener2
+{
+public:
+	void start()
+	{
+		if (!g_pGameEventManager->AddListener(this, "player_hurt", false)) {
+			throw std::exception("Failed to register the event");
+		}
+	}
+	void stop()
+	{
+		g_pGameEventManager->RemoveListener(this);
+	}
+	void FireGameEvent(IGameEvent *event) override
+	{
+		hitmarker::singleton()->on_fire_event(event);
+	}
+	int GetEventDebugID(void) override
+	{
+		return 0x2A;
+	}
+};
 
 

@@ -13,6 +13,7 @@
 #include "Hacks.h"
 #include "Menu.h"
 #include "MiscHacks.h"
+#include "hitmarker.h"
 #include "Dumping.h"
 
 
@@ -50,6 +51,7 @@ int InitialThread()
 	Hacks::SetupHacks();
 	Menu::SetupMenu();
 	Hooks::Initialise();
+	hitmarker::singleton()->initialize();
 
 	// Dumping
 	//Dump::DumpClassIds();

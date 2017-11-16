@@ -468,6 +468,9 @@ void CMiscTab::Setup()
 	OtherGroup.PlaceLabledControl("Thirdperson", this, &OtherThirdperson);
 
 
+	HitmarkerSound.SetFileId("aa_hit");
+	OtherGroup.PlaceLabledControl("hitmarker_sound", this, &HitmarkerSound);
+
 #pragma endregion other random options
 
 #pragma region FakeLag

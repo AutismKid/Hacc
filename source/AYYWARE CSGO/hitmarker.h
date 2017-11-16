@@ -50,11 +50,7 @@ public:
 	{
 		if (!strcmp(event->GetName(), "player_hurt")) {
 			int attacker = event->GetInt("attacker");
-			if (Interfaces::Engine->GetPlayerForUserID(attacker) == Interfaces::Engine->GetLocalPlayer() && Menu::Window.VisualsTab.OtherHitmarker.GetState())
-			{
-				_flHurtTime = Interfaces::Globals->curtime;
-			}
-			if (Interfaces::Engine->GetPlayerForUserID(attacker) == Interfaces::Engine->GetLocalPlayer() && Menu::Window.VisualsTab.HitmarkerSound.GetState())
+			if (Interfaces::Engine->GetPlayerForUserID(attacker) == Interfaces::Engine->GetLocalPlayer() && Menu::Window.MiscTab.HitmarkerSound.GetState())
 			{
 				PlaySoundA(_soundFileName, NULL, SND_ASYNC);
 			}
@@ -85,7 +81,7 @@ public:
 
 private:
 	player_hurt_listener    _listener;
-	const char*             _soundFileName = "csgo\\sound\\hitsound.wav";
+	const char*             _soundFileName = "csgo\\sound\\hit.wav";
 	float                   _flHurtTime;
 };
 

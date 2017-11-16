@@ -93,8 +93,7 @@ public:
 	CCheckBox OptionsWeapon;
 	CCheckBox OptionsArmor;
 	CCheckBox OptionsInfo;
-	CCheckBox OptionsMoney;
-	CCheckBox HitmarkerSound;
+	CCheckBox OptionsMoney;	
 	CCheckBox OptionsHelmet;
 	CCheckBox OptionsBarrels;
 	CCheckBox OptionsKit;
@@ -117,6 +116,7 @@ public:
 	CCheckBox FiltersC4;
 
 	// Other Settings
+	
 	CCheckBox SniperCrosshair;
 	CGroupBox OtherGroup;
 	CComboBox OtherCrosshair;
@@ -194,6 +194,7 @@ public:
 	CSlider	  FakeLagSend;
 	CCheckBox ChokeRandomize;
 	CCheckBox SendRandomize;
+	CCheckBox HitmarkerSound;
 	//CCheckBox FakeLagWhileShooting;
 };
 
@@ -287,6 +288,7 @@ public:
 	CButton LoadButton;
 	CComboBox ConfigBox;
 	CButton UnloadButton;
+
 };
 
 namespace Menu
